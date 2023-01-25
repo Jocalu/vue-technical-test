@@ -2,10 +2,11 @@
   "compilerOptions": {
     "baseUrl": "./",
     "target": "esnext",
-    "useDefineForClassFields": true,
     "module": "esnext",
+    "lib": ["esnext", "dom", "dom.iterable", "scripthost"],
     "moduleResolution": "node",
     "isolatedModules": true,
+    "noImplicitAny": true,
     "strict": true,
     "jsx": "preserve",
     "sourceMap": true,
@@ -14,8 +15,7 @@
     "paths": {
       "@/*": ["src/*"]
     },
-    "lib": ["esnext", "dom", "dom.iterable", "scripthost"],
     "skipLibCheck": true
   },
-  "include": ["vite.config.*", "env.d.ts", "src/**/*", "src/**/*.vue"]
+  "include": ["vite.config.*", "env.d.ts", "src/**/*", "src/**/*.vue"],
 }

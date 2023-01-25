@@ -3,8 +3,6 @@ import { defineComponent } from 'vue'
 
 export default defineComponent({
   setup () {
-    
-
     return {}
   }
 })
@@ -19,7 +17,7 @@ export default defineComponent({
 <style scoped>
 .custom-select {
   display: grid;
-  grid-template-areas: "select";
+  grid-template-areas: 'select';
   width: 100%;
   min-width: 15ch;
   max-width: 30ch;
@@ -31,7 +29,7 @@ export default defineComponent({
   background-color: #fff;
 }
 .custom-select::after {
-  content: "";
+  content: '';
   grid-area: select;
   justify-self: end;
   width: 0.8em;

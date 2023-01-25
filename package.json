@@ -4,30 +4,41 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
+    "prepare": "husky install",
     "preview": "vite preview --port 5050",
     "typecheck": "vue-tsc --noEmit",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "dependencies": {
-    "vue": "^3.2.26",
-    "vue3-datepicker": "^0.3.1"
+    "vue": "3.2.26",
+    "vue3-datepicker": "0.3.1"
   },
   "devDependencies": {
-    "@rushstack/eslint-patch": "^1.1.0",
-    "@types/node": "^16.11.17",
-    "@vitejs/plugin-vue": "^2.0.1",
-    "@vue/eslint-config-typescript": "^10.0.0",
-    "autoprefixer": "^10.4.2",
-    "eslint": "^8.5.0",
-    "eslint-plugin-vue": "^8.2.0",
-    "postcss": "^8.4.5",
-    "tailwindcss": "^3.0.15",
-    "typescript": "~4.5.4",
-    "vite": "^2.7.7",
-    "vue-tsc": "^0.29.8"
+    "@commitlint/cli": "17.4.2",
+    "@commitlint/config-conventional": "17.4.2",
+    "@rushstack/eslint-patch": "1.1.0",
+    "@types/node": "16.11.17",
+    "@vitejs/plugin-vue": "2.0.1",
+    "@vue/eslint-config-typescript": "10.0.0",
+    "@vue/test-utils": "2.2.7",
+    "autoprefixer": "10.4.2",
+    "eslint": "8.32.0",
+    "eslint-config-prettier": "8.6.0",
+    "eslint-config-standard": "17.0.0",
+    "eslint-plugin-import": "2.27.5",
+    "eslint-plugin-n": "15.6.1",
+    "eslint-plugin-promise": "6.1.1",
+    "eslint-plugin-vue": "8.2.0",
+    "husky": "8.0.3",
+    "postcss": "8.4.5",
+    "tailwindcss": "3.0.15",
+    "typescript": "4.5.4",
+    "vite": "2.7.7",
+    "vitest": "0.28.2",
+    "vue-tsc": "1.0.24"
   },
   "volta": {
-    "node": "14.17.0",
-    "yarn": "1.19.2"
+    "node": "16.17.0",
+    "yarn": "1.22.15"
   }
 }
