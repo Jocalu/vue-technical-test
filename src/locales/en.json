@@ -1,7 +1,31 @@
 {
+  "altLogoText": "Los Cocos Bungalows logo",
   "breadcrumbsRooms": {
     "title": "Rooms & Rates",
     "description": "Plan your perfect stay at your hotel",
     "altText": "Rooms breadcrumbs"
+  },
+  "headerDefault" : {
+    "links": [
+      "Home",
+      "Rooms",
+      "Restaurant",
+      "Weedings",
+      "Membership",
+      "Contact"
+    ]
+  },
+  "footerDefault": {
+    "links": [
+      "Terms and Conditions",
+      "Privacy Policy",
+      "About us",
+      "Partners"
+    ],
+    "contact": [
+      "reservations@loscocosbungalows.com",
+      "Tlf: +34 555 555 555"
+    ],
+    "altSocialIconsText": "Social media icons"
   }
 }

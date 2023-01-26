@@ -1,21 +1,35 @@
+<script lang="ts" setup>
+import { altLogoText, footerDefault } from '@/locales/en.json'
+</script>
+
 <template>
   <div class="p-4 border-t border-gray-light">
-    <div class="flex justify-between mx-auto text-sm footer">
+    <div class="footer flex justify-between mx-auto text-sm">
       <div class="flex items-center space-x-4">
-        <div>
-          <img src="@/assets/img/los-cocos-iso-footer.png" width="45" />
-        </div>
-        <a href="#">Terms and Conditions</a>
-        <a href="#">Privacy Policy</a>
-        <a href="#">About us</a>
-        <a href="#">Partners</a>
+        <img
+          class="footer__logo"
+          src="@/assets/img/los-cocos-iso-footer.png"
+          :alt="altLogoText"
+        />
+        <a
+          v-for="(link, index) in footerDefault.links"
+          :key="index"
+          href="#"
+          v-text="link"
+        />
       </div>
       <div class="flex items-center space-x-4">
-        <a href="#">reservations@loscocosbungalows.com</a>
-        <a href="#">Tlf: +34 555 555 555</a>
-        <div>
-          <img src="@/assets/img/footer_icons.png" width="125" />
-        </div>
+        <a
+          v-for="(contact, index) in footerDefault.contact"
+          :key="index"
+          href="#"
+          v-text="contact"
+        />
+        <img
+          class="footer__icons"
+          src="@/assets/img/footer_icons.png"
+          :alt="footerDefault.altSocialIconsText"
+        />
       </div>
     </div>
   </div>

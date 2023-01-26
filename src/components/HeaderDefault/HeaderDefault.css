@@ -1,11 +1,13 @@
-.logo {
+.header-default__logo {
   width: 125px;
   height: auto;
 }
-.menu-btn {
+
+.header-default__menu-item {
   @apply transition-colors;
   @apply duration-300;
 }
-.menu-btn:hover {
+
+.header-default__menu-item:hover {
   @apply text-primary;
 }

@@ -9,7 +9,7 @@
   font-size: 1rem;
   cursor: pointer;
   line-height: 24px;
-  background-color: #fff;
+  background-color: var(--vdp-white);
 }
 
 .custom-select::after {

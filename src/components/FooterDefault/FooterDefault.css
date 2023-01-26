@@ -1,3 +1,11 @@
 .footer {
   max-width: 80rem;
 }
+
+.footer__logo {
+  width: 45px;
+}
+
+.footer__icons  {
+  width: 125px;
+}

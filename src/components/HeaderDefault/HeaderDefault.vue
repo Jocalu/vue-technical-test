@@ -1,21 +1,36 @@
+<script lang="ts" setup>
+import { altLogoText, headerDefault } from '@/locales/en.json'
+
+const leftLinks = headerDefault.links.slice(0, 3)
+const rightLinks = headerDefault.links.slice(3, 6)
+</script>
+
 <template>
   <header class="flex justify-between max-w-6xl px-8 py-4 mx-auto">
     <div class="flex justify-between w-1/3">
-      <a href="#" class="menu-btn">Home</a>
-      <a href="#" class="menu-btn">Rooms</a>
-      <a href="#" class="menu-btn">Restaurant</a>
+      <a
+        v-for="(link, index) in leftLinks"
+        :key="index"
+        class="header-default__menu-item"
+        href="#"
+        v-text="link"
+      />
     </div>
     <div class="flex justify-center w-1/3">
       <img
+        class="header-default__logo"
         src="@/assets/img/logo-cocos.png"
-        alt="Hotel Los Cocos"
-        class="logo"
+        :alt="altLogoText"
       />
     </div>
     <div class="flex justify-between w-1/3">
-      <a href="#" class="menu-btn">Weedings</a>
-      <a href="#" class="menu-btn">Membership</a>
-      <a href="#" class="menu-btn">Contact</a>
+      <a
+        v-for="(link, index) in rightLinks"
+        :key="index"
+        class="header-default__menu-item"
+        href="#"
+        v-text="link"
+      />
     </div>
   </header>
 </template>
