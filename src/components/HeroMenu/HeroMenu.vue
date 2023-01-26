@@ -4,23 +4,12 @@ import { defineComponent, ref } from 'vue'
 import Datepicker from 'vue3-datepicker'
 
 import CustomSelect from '@/components/CustomSelect/CustomSelect.vue'
-import BreadcrumbsRooms from '@/components/BreadcrumbsRooms/BreadcrumbsRooms.vue'
-import FooterDefault from '@/components/FooterDefault/FooterDefault.vue'
-import HeaderDefault from '@/components/HeaderDefault/HeaderDefault.vue'
 import ReservationSummary from '@/components/ReservationSummary/ReservationSummary.vue'
-import RoomsContainer from '@/components/RoomsContainer/RoomsContainer.vue'
-
-import { Room } from '@/@types/Room'
 
 export default defineComponent({
   components: {
     CustomSelect,
-    BreadcrumbsRooms,
-    Datepicker,
-    FooterDefault,
-    HeaderDefault,
-    RoomsContainer,
-    ReservationSummary
+    Datepicker
   },
   setup() {
     const sd = ref()
@@ -28,12 +17,6 @@ export default defineComponent({
     const adults = ref('')
     const children = ref('')
     const summary = ref<typeof ReservationSummary>()
-
-    const selectRoom = (room: Room) => {
-      if (summary.value) {
-        summary.value.updateHotelData(room)
-      }
-    }
 
     const modifyReservationHandler = () => {
       if (summary.value) {
@@ -50,7 +33,6 @@ export default defineComponent({
       ed,
       adults,
       children,
-      selectRoom,
       summary,
       modifyReservationHandler
     }
@@ -59,8 +41,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <HeaderDefault />
-  <div class="mb-4 hero">
+  <div class="hero">
     <div class="flex justify-center px-8 py-4 bg-primary bg-opacity-40">
       <div class="flex items-start space-x-4">
         <div class="calendar-wrapper">
@@ -97,15 +78,6 @@ export default defineComponent({
       </div>
     </div>
   </div>
-  <BreadcrumbsRooms />
-  <div class="inline-block px-8 mb-16">
-    <div class="float-left w-2/3">
-      <RoomsContainer :select-room="selectRoom" />
-    </div>
-    <div class="float-right w-1/3 pl-4">
-      <ReservationSummary ref="summary" />
-    </div>
-  </div>
-  <FooterDefault />
 </template>
-<style scoped src="./App.css"></style>
+
+<style scoped src="./HeroMenu.css"></style>

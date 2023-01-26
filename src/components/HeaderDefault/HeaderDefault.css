@@ -1,0 +1,11 @@
+.logo {
+  width: 125px;
+  height: auto;
+}
+.menu-btn {
+  @apply transition-colors;
+  @apply duration-300;
+}
+.menu-btn:hover {
+  @apply text-primary;
+}

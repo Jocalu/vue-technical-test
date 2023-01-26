@@ -1,0 +1,29 @@
+.hero {
+  @apply bg-cover;
+  @apply bg-center;
+  @apply bg-no-repeat;
+  background-image: url(@/assets/img/los-cocos-room-header-2-x.png);
+}
+
+.calendar-wrapper {
+  position: relative;
+}
+
+.calendar-wrapper:before {
+  content: '';
+  position: absolute;
+  @apply right-2.5;
+  top: 50%;
+  transform: translateY(-50%);
+  display: block;
+  width: 25px;
+  height: 25px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(@/assets/img/calendar-empty.svg);
+  z-index: 100;
+}
+
+.calendar-input {
+  @apply p-2 pr-8;
+}

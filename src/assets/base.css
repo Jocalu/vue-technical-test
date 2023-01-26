@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --vdp-hover-bg-color: theme('colors.primary');
+  --vdp-selected-bg-color: theme('colors.primary');
+}
+
 body {
   @apply text-gray;
 }
@@ -18,3 +23,31 @@ body {
 .primary-btn:hover {
   background-color: #00447C;
 }
+
+select {
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  padding: 0 1em 0 0;
+  margin: 0;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+  outline: none;
+  grid-area: select;
+}
+
+.button {
+  display: block;
+  width: 100%;
+  background-color: #0162b3;
+  color: white;
+  padding: 10px;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  min-width: 7rem;
+  transition: all 0.3s ease;
+}
+

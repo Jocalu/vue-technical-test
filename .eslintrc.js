@@ -7,12 +7,15 @@ module.exports = {
     '@vue/eslint-config-typescript',
     'eslint:recommended',
     'plugin:vue/vue3-recommended',
-    'standard'
+    'standard',
+    'prettier'
   ],
   parserOptions: {
     ecmaVersion: 'latest'
   },
   rules: {
-    '@typescript-eslint/no-explicit-any': 'error'
+    '@typescript-eslint/no-explicit-any': 'error',
+    'no-unused-vars': 'error',
+    'vue/no-v-html': 0
   }
 }

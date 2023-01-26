@@ -1,19 +1,10 @@
 <script lang="ts">
 import { defineComponent, reactive } from 'vue'
 
-interface HotelData {
-  name: string
-  amount: string
-}
-
-interface ReservationData {
-  startDate: string
-  endDate: string
-  adults: string
-}
+import { HotelData, ReservationData } from './ReservationSummary'
 
 export default defineComponent({
-  setup () {
+  setup() {
     const data = reactive({
       roomName: '-',
       checkinDate: '-',
@@ -70,30 +61,11 @@ export default defineComponent({
         <p>{{ data.adults }} Adults</p>
       </div>
     </div>
-    <hr class="mb-4 border-0 border-t border-gray-light">
+    <hr class="mb-4 border-0 border-t border-gray-light" />
     <div class="flex justify-between mb-8">
       <p>Total</p>
       <p>{{ data.total }}</p>
     </div>
-    <button
-      class="button"
-      @click="saveHandler"
-    >
-      Save
-    </button>
+    <button class="button" @click="saveHandler">Save</button>
   </div>
 </template>
-
-<style scoped>
-.button {
-  display: block;
-  width: 100%;
-  background-color: #0162b3;
-  color: white;
-  padding: 10px;
-  font-size: 1rem;
-  line-height: 1.5rem;
-  min-width: 7rem;
-  transition: all 0.3s ease;
-}
-</style>
