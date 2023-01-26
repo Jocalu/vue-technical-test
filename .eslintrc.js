@@ -17,5 +17,13 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 'error',
     'no-unused-vars': 'error',
     'vue/no-v-html': 0
-  }
+  },
+  overrides: [
+    {
+      files: ['*.spec.ts'],
+      rules: {
+        'no-undef': 'off'
+      }
+    }
+  ]
 }
