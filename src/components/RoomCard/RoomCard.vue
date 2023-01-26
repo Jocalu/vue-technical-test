@@ -1,11 +1,17 @@
 <script lang="ts" setup>
 import { defineProps } from 'vue'
 
-import { Room } from '@/@types/Room'
+import { roomCard } from '@/locales/en.json'
 
-defineProps<{
+import { type Room } from '@/@types/Room'
+
+const props = defineProps<{
   room: Room
 }>()
+
+const bedText = `${roomCard.beds} ${props.room.beds}`
+const peopleText = `${roomCard.people} ${props.room.people}`
+const sizeText = `${roomCard.size} ${props.room.size}`
 </script>
 
 <template>
@@ -16,27 +22,28 @@ defineProps<{
       <div class="w-1/3">
         <img
           :src="room.img"
-          alt="Mini Dreamy Room"
+          :alt="room.name"
           class="object-cover w-full h-full"
         />
       </div>
       <div class="flex flex-col w-2/3 text-sm">
-        <p class="mb-2 text-base font-display">
-          <strong>{{ room.name ? room.name : undefined }}</strong>
-        </p>
-        <p class="flex-1">
-          {{ room.description }}
-        </p>
-        <p class="mb-6">Size: {{ room.size }}</p>
+        <p
+          class="mb-2 text-base font-display font-semibold"
+          v-text="room.name"
+        />
+        <p class="flex-1" v-text="room.description" />
+        <p class="mb-6" v-text="sizeText" />
         <div class="flex items-baseline space-x-16">
           <div>
-            <img src="@/assets/img/double-bed.svg" class="w-8 mb-1" />
-            <p>Beds: {{ room.beds }}</p>
+            <img
+              class="w-8 mb-1"
+              src="@/assets/img/double-bed.svg"
+              :alt="roomCard.altBedIcon"
+            />
+            <p v-text="bedText" />
           </div>
-          <div class="flex-1">People: {{ room.people }}</div>
-          <div class="text-xl">
-            <strong>{{ room.amount }}</strong>
-          </div>
+          <p class="flex-1" v-text="peopleText" />
+          <p class="text-xl font-semibold" v-text="room.amount" />
         </div>
       </div>
     </div>

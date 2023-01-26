@@ -12,7 +12,7 @@ body {
   @apply text-gray;
 }
 
-.primary-btn {
+.primary-button {
   @apply bg-primary;
   @apply p-2;
   @apply text-white;
@@ -21,7 +21,7 @@ body {
   min-width: 7rem;
   transition: all 0.3s ease;
 }
-.primary-btn:hover {
+.primary-button:hover {
   background-color: #00447C;
 }
 

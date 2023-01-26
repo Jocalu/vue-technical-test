@@ -1,10 +1,12 @@
 {
+  "adultsText": "Adults",
   "altLogoText": "Los Cocos Bungalows logo",
   "breadcrumbsRooms": {
     "title": "Rooms & Rates",
     "description": "Plan your perfect stay at your hotel",
     "altText": "Rooms breadcrumbs"
   },
+  "childrenText": "Children",
   "headerDefault" : {
     "links": [
       "Home",
@@ -27,5 +29,14 @@
       "Tlf: +34 555 555 555"
     ],
     "altSocialIconsText": "Social media icons"
-  }
+  },
+  "modifyText": "Modify",
+  "roomCard": {
+    "altBedIcon": "Bed icon",
+    "beds": "Beds:",
+    "people": "People:",
+    "size": "Size:"
+  },
+  "selectAdults": "Select Adults",
+  "selectChildren": "Select Children"
 }
