@@ -1,7 +1,8 @@
 import { render } from '@/utils/test.utils'
-import { breadcrumbsRooms } from '@/locales/en.json'
 
 import BreadcrumbsRooms from './BreadcrumbsRooms.vue'
+
+import { breadcrumbsRooms } from '@/locales/en.json'
 
 const componentBuilder = (options = {}) => {
   const component = render(BreadcrumbsRooms, options)
