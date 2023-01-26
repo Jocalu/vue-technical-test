@@ -11,7 +11,7 @@ defineProps<{
 </script>
 
 <template>
-  <div class="custom-select">
+  <div class="custom-select" data-testid="select">
     <select
       :value="modelValue"
       @input="
