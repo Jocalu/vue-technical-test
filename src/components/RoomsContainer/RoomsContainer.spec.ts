@@ -15,7 +15,11 @@ const mockedRooms = [
 ]
 
 const componentBuilder = () => {
-  const component = render(RoomsContainer)
+  const component = render(RoomsContainer, {
+    props: {
+      rooms: mockedRooms
+    }
+  })
 
   return {
     ...component

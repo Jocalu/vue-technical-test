@@ -5,6 +5,7 @@
     "description": "Plan your perfect stay at your hotel",
     "altText": "Rooms breadcrumbs"
   },
+  "errorMessage": "Something went wrong, please try again later",
   "headerDefault" : {
     "links": [
       "Home",

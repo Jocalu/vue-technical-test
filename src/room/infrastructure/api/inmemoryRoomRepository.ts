@@ -1,4 +1,4 @@
-import { RoomRepository } from '@/repository/room/domain/roomRepository'
+import { RoomRepository } from '@/room/domain/roomRepository'
 
 import type { Room } from '@/@types/Room'
 

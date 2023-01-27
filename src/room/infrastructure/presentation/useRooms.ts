@@ -1,4 +1,4 @@
-import { inmemoryRoomRepository } from '@/repository/room/infrastructure/api/inmemoryRoomRepository'
+import { inmemoryRoomRepository } from '@/room/infrastructure/api/inmemoryRoomRepository'
 
 export const useRooms = () => {
   const { getRooms } = inmemoryRoomRepository()
