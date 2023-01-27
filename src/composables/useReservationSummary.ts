@@ -12,6 +12,7 @@ const reservationSummaryData = reactive<ReservationSummaryData>({
   adults: DEFAULT_DATA_VALUE,
   checkinDate: DEFAULT_DATA_VALUE,
   checkoutDate: DEFAULT_DATA_VALUE,
+  children: DEFAULT_DATA_VALUE,
   roomName: DEFAULT_DATA_VALUE,
   total: DEFAULT_DATA_VALUE
 })
@@ -28,6 +29,7 @@ export const useReservationSummary = () => {
     reservationSummaryData.checkinDate = reservationData.startDate
     reservationSummaryData.checkoutDate = reservationData.endDate
     reservationSummaryData.adults = reservationData.adults
+    reservationSummaryData.children = reservationData.children
   }
 
   const saveHandler = () => {}

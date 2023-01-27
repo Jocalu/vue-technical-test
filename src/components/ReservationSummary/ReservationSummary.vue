@@ -10,6 +10,9 @@ const { reservationSummaryData, saveHandler } = useReservationSummary()
 const adultsSummary = computed(
   () => `${reservationSummaryData.adults} ${reservationSummary.adults}`
 )
+const childrenSummary = computed(
+  () => `${reservationSummaryData.children} ${reservationSummary.children}`
+)
 const reservationDateSummary = computed(
   () =>
     `${reservationSummary.from} ${reservationSummaryData.checkinDate} ${reservationSummary.to} ${reservationSummaryData.checkoutDate}`
@@ -38,6 +41,7 @@ const reservationDateSummary = computed(
       <div>
         <p class="font-bold" v-text="reservationSummary.people" />
         <p v-text="adultsSummary" />
+        <p v-text="childrenSummary" />
       </div>
     </div>
     <hr class="mb-4 border-0 border-t border-gray-light" />

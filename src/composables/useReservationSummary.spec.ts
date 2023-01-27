@@ -1,12 +1,13 @@
-import { ReservationDataSelected } from '@/@types/Reservation'
-import { Room } from '@/@types/Room'
 import { useReservationSummary } from '@/composables/useReservationSummary'
 import { beforeEach } from 'vitest'
+
+import type { ReservationDataSelected } from '@/@types/Reservation'
+import type { Room } from '@/@types/Room'
 
 const { reservationSummaryData, updateHotelData, updateReservationData } =
   useReservationSummary()
 
-const mockedHotelData = {
+const mockedHotelData: Room = {
   amount: '500 €',
   beds: '2',
   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
@@ -16,8 +17,9 @@ const mockedHotelData = {
   size: '30m2'
 }
 
-const mockedReservationData = {
+const mockedReservationData: ReservationDataSelected = {
   adults: '2',
+  children: '0',
   endDate: '2022-01-05',
   startDate: '2022-01-01'
 }
@@ -36,6 +38,7 @@ describe('updateHotelData', () => {
       adults: '-',
       checkinDate: '-',
       checkoutDate: '-',
+      children: '-',
       roomName: mockedHotelData.name,
       total: mockedHotelData.amount
     }
@@ -74,6 +77,7 @@ describe('updateReservationData', () => {
       adults: mockedReservationData.adults,
       checkinDate: mockedReservationData.startDate,
       checkoutDate: mockedReservationData.endDate,
+      children: mockedReservationData.children,
       roomName: '-',
       total: '-'
     }

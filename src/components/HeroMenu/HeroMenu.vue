@@ -17,9 +17,10 @@ const children = ref('')
 
 const modifyReservationHandler = () => {
   updateReservationData({
-    startDate: new Intl.DateTimeFormat('en-US').format(startDate.value),
+    adults: adults.value,
+    children: children.value,
     endDate: new Intl.DateTimeFormat('en-US').format(endDate.value),
-    adults: adults.value
+    startDate: new Intl.DateTimeFormat('en-US').format(startDate.value)
   })
 
   alert('Summary Updated')
