@@ -9,17 +9,25 @@ import RoomsContainer from '@/components/RoomsContainer/RoomsContainer.vue'
 
 import { useRooms } from '@/room/infrastructure/presentation/useRooms'
 import { errorMessage } from '@/locales/en.json'
+import { checkValidPromo } from '@/utils/checkValidPromo'
 
 import type { Room } from '@/@types/Room'
 
 const { getRooms } = useRooms()
 
-const rooms = ref<Room[]>([])
 const hasRooms = ref<boolean>(false)
+const rooms = ref<Room[]>([])
+const url = new URL(window.location.href)
+const promoCode = url.searchParams.get('promo_code')
+const discountPercentage = ref<number>(0)
 
 onBeforeMount(async () => {
   rooms.value = await getRooms()
   hasRooms.value = rooms.value.length > 0
+
+  if (promoCode) {
+    discountPercentage.value = checkValidPromo(promoCode)
+  }
 })
 </script>
 
@@ -33,7 +41,7 @@ onBeforeMount(async () => {
           <RoomsContainer :rooms="rooms" />
         </div>
         <div class="float-right w-1/3 pl-4">
-          <ReservationSummary ref="summary" />
+          <ReservationSummary :discount-percentage="discountPercentage" />
         </div>
       </div>
     </div>

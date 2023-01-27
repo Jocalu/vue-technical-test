@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { computed, onBeforeMount } from 'vue'
+import { computed, defineProps, onBeforeMount } from 'vue'
 
 import { useReservationSummary } from '@/composables/useReservationSummary'
 
@@ -8,6 +8,10 @@ import { reservationSummary, saveText, totalText } from '@/locales/en.json'
 const { getReservationSummaryData, reservationSummaryData, saveHandler } =
   useReservationSummary()
 
+const props = defineProps<{
+  discountPercentage: number
+}>()
+
 onBeforeMount(() => {
   getReservationSummaryData()
 })
@@ -15,12 +19,24 @@ onBeforeMount(() => {
 const adultsSummary = computed(
   () => `${reservationSummaryData.adults} ${reservationSummary.adults}`
 )
+
 const childrenSummary = computed(
   () => `${reservationSummaryData.children} ${reservationSummary.children}`
 )
+
+const hasDiscount = computed(() => props.discountPercentage > 0)
+
 const reservationDateSummary = computed(
   () =>
     `${reservationSummary.from} ${reservationSummaryData.checkinDate} ${reservationSummary.to} ${reservationSummaryData.checkoutDate}`
+)
+
+const totalDiscount = computed(
+  () =>
+    `${
+      Number(reservationSummaryData.total) -
+      (Number(reservationSummaryData.total) * props.discountPercentage) / 100
+    }`
 )
 </script>
 
@@ -52,7 +68,8 @@ const reservationDateSummary = computed(
     <hr class="mb-4 border-0 border-t border-gray-light" />
     <div class="flex justify-between mb-8">
       <p v-text="totalText" />
-      <p v-text="reservationSummaryData.total" />
+      <p v-if="!hasDiscount" v-text="reservationSummaryData.total" />
+      <p v-else v-text="totalDiscount" />
     </div>
     <button class="button" @click="saveHandler" v-text="saveText" />
   </div>
