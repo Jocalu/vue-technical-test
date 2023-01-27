@@ -12,6 +12,10 @@ body {
   @apply text-gray;
 }
 
+#app {
+  overflow: hidden;
+}
+
 .primary-button {
   @apply bg-primary;
   @apply p-2;

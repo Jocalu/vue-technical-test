@@ -30,7 +30,7 @@ const sizeSummary = `${roomCard.size} ${props.room.size}`
         <p class="mb-2 text-base font-display font-bold" v-text="room.name" />
         <p class="flex-1" v-text="room.description" />
         <p class="mb-6" v-text="sizeSummary" />
-        <div class="flex items-baseline space-x-16">
+        <div class="flex items-baseline md:space-x-16 space-x-2">
           <div>
             <img
               class="w-8 mb-1"

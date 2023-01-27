@@ -9,7 +9,11 @@ import { reservationSummary, saveText, totalText } from '@/locales/en.json'
 const { reservationSummaryData } = useReservationSummary()
 
 const componentBuilder = () => {
-  const component = render(ReservationSummary)
+  const component = render(ReservationSummary, {
+    props: {
+      discountPercentage: 0
+    }
+  })
 
   return {
     ...component

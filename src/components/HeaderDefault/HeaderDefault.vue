@@ -7,7 +7,7 @@ const rightLinks = headerDefault.links.slice(3, 6)
 
 <template>
   <header class="flex justify-between max-w-6xl px-8 py-4 mx-auto">
-    <div class="flex justify-between w-1/3">
+    <div class="md:flex hidden justify-between w-1/3">
       <a
         v-for="(link, index) in leftLinks"
         :key="index"
@@ -23,7 +23,7 @@ const rightLinks = headerDefault.links.slice(3, 6)
         :alt="altLogoText"
       />
     </div>
-    <div class="flex justify-between w-1/3">
+    <div class="md:flex hidden justify-between w-1/3">
       <a
         v-for="(link, index) in rightLinks"
         :key="index"

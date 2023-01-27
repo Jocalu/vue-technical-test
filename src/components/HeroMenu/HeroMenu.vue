@@ -55,8 +55,12 @@ const childrenOptions = {
 
 <template>
   <div class="hero-menu">
-    <div class="flex justify-center px-8 py-4 bg-primary bg-opacity-40">
-      <div class="flex items-start space-x-4">
+    <div
+      class="flex justify-start md:justify-center px-8 py-4 bg-primary bg-opacity-40"
+    >
+      <div
+        class="flex flex-col md:flex-row items-start gap-y-4 md:gap-y-0 md:space-x-4"
+      >
         <div class="hero-menu__calendar-wrapper">
           <Datepicker v-model="startDate" class="calendar-input" />
         </div>

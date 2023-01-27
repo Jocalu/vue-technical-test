@@ -36,11 +36,11 @@ onBeforeMount(async () => {
     <HeroMenu class="mb-4" />
     <div v-if="hasRooms">
       <BreadcrumbsRooms />
-      <div class="inline-block px-8 mb-16">
-        <div class="float-left w-2/3">
+      <div class="flex flex-col md:inline-block px-8 mb-16">
+        <div class="md:float-left md:w-2/3">
           <RoomsContainer :rooms="rooms" />
         </div>
-        <div class="float-right w-1/3 pl-4">
+        <div class="float-right md:w-1/3 md:pl-4">
           <ReservationSummary :discount-percentage="discountPercentage" />
         </div>
       </div>
