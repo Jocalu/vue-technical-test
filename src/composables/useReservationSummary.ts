@@ -1,4 +1,4 @@
-import { reactive, readonly } from 'vue'
+import { reactive } from 'vue'
 
 import type {
   ReservationDataSelected,
@@ -9,10 +9,10 @@ import type { Room } from '@/@types/Room'
 const DEFAULT_DATA_VALUE = '-'
 
 const reservationSummaryData = reactive<ReservationSummaryData>({
-  roomName: DEFAULT_DATA_VALUE,
+  adults: DEFAULT_DATA_VALUE,
   checkinDate: DEFAULT_DATA_VALUE,
   checkoutDate: DEFAULT_DATA_VALUE,
-  adults: DEFAULT_DATA_VALUE,
+  roomName: DEFAULT_DATA_VALUE,
   total: DEFAULT_DATA_VALUE
 })
 
@@ -33,7 +33,7 @@ export const useReservationSummary = () => {
   const saveHandler = () => {}
 
   return {
-    reservationSummaryData: readonly(reservationSummaryData),
+    reservationSummaryData,
     saveHandler,
     updateHotelData,
     updateReservationData
