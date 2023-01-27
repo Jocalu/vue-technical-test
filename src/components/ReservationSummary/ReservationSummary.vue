@@ -1,11 +1,16 @@
 <script lang="ts" setup>
-import { computed } from 'vue'
+import { computed, onBeforeMount } from 'vue'
 
 import { useReservationSummary } from '@/composables/useReservationSummary'
 
 import { reservationSummary, saveText, totalText } from '@/locales/en.json'
 
-const { reservationSummaryData, saveHandler } = useReservationSummary()
+const { getReservationSummaryData, reservationSummaryData, saveHandler } =
+  useReservationSummary()
+
+onBeforeMount(() => {
+  getReservationSummaryData()
+})
 
 const adultsSummary = computed(
   () => `${reservationSummaryData.adults} ${reservationSummary.adults}`

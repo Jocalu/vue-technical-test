@@ -1,5 +1,4 @@
 import { useReservationSummary } from '@/composables/useReservationSummary'
-import { beforeEach } from 'vitest'
 
 import type { ReservationDataSelected } from '@/@types/Reservation'
 import type { Room } from '@/@types/Room'
