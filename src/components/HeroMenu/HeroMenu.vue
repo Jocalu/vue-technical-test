@@ -4,7 +4,7 @@ import Datepicker from 'vue3-datepicker'
 
 import CustomSelect from '@/components/CustomSelect/CustomSelect.vue'
 
-import { useReservationSummary } from '@/components/ReservationSummary/useReservationSummary'
+import { useReservationSummary } from '@/composables/useReservationSummary'
 
 import { heroMenu, modifyText } from '@/locales/en.json'
 
@@ -62,11 +62,8 @@ const childrenOptions = {
         <div class="hero-menu__calendar-wrapper">
           <Datepicker v-model="endDate" class="hero-menu__calendar-input" />
         </div>
-        <CustomSelect :options="adultsOptions.options" :model-value="adults" />
-        <CustomSelect
-          :options="childrenOptions.options"
-          :model-value="children"
-        />
+        <CustomSelect v-model="adults" :options="adultsOptions.options" />
+        <CustomSelect v-model="children" :options="childrenOptions.options" />
         <button
           class="primary-button"
           @click="modifyReservationHandler"

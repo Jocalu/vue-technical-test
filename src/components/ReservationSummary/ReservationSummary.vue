@@ -1,71 +1,50 @@
-<script lang="ts">
-import { defineComponent, reactive } from 'vue'
+<script lang="ts" setup>
+import { computed } from 'vue'
 
-import { HotelData, ReservationData } from './ReservationSummary'
+import { useReservationSummary } from '@/composables/useReservationSummary'
 
-export default defineComponent({
-  setup() {
-    const data = reactive({
-      roomName: '-',
-      checkinDate: '-',
-      checkoutDate: '-',
-      adults: '-',
-      total: '-'
-    })
-    const updateHotelData = (hotelData: HotelData): void => {
-      data.roomName = hotelData.name
-      data.total = hotelData.amount
-    }
-    const updateReservationData = (reservationData: ReservationData): void => {
-      data.checkinDate = reservationData.startDate
-      data.checkoutDate = reservationData.endDate
-      data.adults = reservationData.adults
-    }
-    const saveHandler = () => {}
+import { reservationSummary, saveText, totalText } from '@/locales/en.json'
 
-    return {
-      data,
-      updateHotelData,
-      updateReservationData,
-      saveHandler
-    }
-  }
-})
+const { reservationSummaryData, saveHandler } = useReservationSummary()
+
+const adultsSummary = computed(
+  () => `${reservationSummaryData.adults} ${reservationSummary.adults}`
+)
+const reservationDateSummary = computed(
+  () =>
+    `${reservationSummary.from} ${reservationSummaryData.checkinDate} ${reservationSummary.to} ${reservationSummaryData.checkoutDate}`
+)
 </script>
 
 <template>
   <div class="p-4 border border-gray-light">
-    <h2 class="mb-8 text-xl">
-      <strong>Reservation summary</strong>
-    </h2>
-    <h3 class="mb-4">
-      <strong>{{ data.roomName }}</strong>
-    </h3>
+    <h2 class="mb-8 text-xl font-bold" v-text="reservationSummary.title" />
+    <h3 class="mb-4 font-bold" v-text="reservationSummaryData.roomName" />
     <div class="mb-4 space-y-8 text-sm">
       <div class="flex space-x-12">
         <div>
-          <p><strong>Check in</strong></p>
-          <p>From 15.00h</p>
+          <p class="font-bold" v-text="reservationSummary.checkInText" />
+          <p v-text="reservationSummary.checkInHour" />
         </div>
         <div>
-          <p><strong>Check out</strong></p>
-          <p>Before 12.00h</p>
+          <p class="font-bold" v-text="reservationSummary.checkOutText" />
+          <p v-text="reservationSummary.checkOutHour" />
         </div>
       </div>
       <div>
-        <p><strong>Reservation date</strong></p>
-        <p>From {{ data.checkinDate }} to {{ data.checkoutDate }}</p>
+        <p class="font-bold" v-text="reservationSummary.reservationDateText" />
+        <p v-text="reservationDateSummary" />
       </div>
       <div>
-        <p><strong>People</strong></p>
-        <p>{{ data.adults }} Adults</p>
+        <p class="font-bold" v-text="reservationSummary.people" />
+        <p v-text="adultsSummary" />
       </div>
     </div>
     <hr class="mb-4 border-0 border-t border-gray-light" />
     <div class="flex justify-between mb-8">
-      <p>Total</p>
-      <p>{{ data.total }}</p>
+      <p v-text="totalText" />
+      <p v-text="reservationSummaryData.total" />
     </div>
-    <button class="button" @click="saveHandler">Save</button>
+    <button class="button" @click="saveHandler" v-text="saveText" />
   </div>
 </template>

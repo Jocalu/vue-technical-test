@@ -20,8 +20,8 @@
   "include": [
     "vite.config.*", 
     "env.d.ts", 
-    "src/**/*", 
-    "src/**/*.vue", 
+		"**/*",
+		"**/*.vue",
     "test.config.ts"
   ],
 }

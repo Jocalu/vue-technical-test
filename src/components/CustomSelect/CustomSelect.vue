@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { defineProps } from 'vue'
+import { defineEmits, defineProps } from 'vue'
 
 defineProps<{
   options: {
@@ -8,16 +8,17 @@ defineProps<{
   }[]
   modelValue: string
 }>()
+
+const emit = defineEmits(['update:modelValue'])
+
+const emitEvent = (event: Event) => {
+  emit('update:modelValue', (event.target as HTMLInputElement).value)
+}
 </script>
 
 <template>
   <div class="custom-select" data-testid="select">
-    <select
-      :value="modelValue"
-      @input="
-        $emit('update:modelValue', ($event.target as HTMLInputElement).value)
-      "
-    >
+    <select :value="modelValue" @input="emitEvent">
       <option
         v-for="option in options"
         :key="option.value"
