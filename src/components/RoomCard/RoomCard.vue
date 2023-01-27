@@ -3,15 +3,15 @@ import { defineProps } from 'vue'
 
 import { roomCard } from '@/locales/en.json'
 
-import { type Room } from '@/@types/Room'
+import type { Room } from '@/@types/Room'
 
 const props = defineProps<{
   room: Room
 }>()
 
-const bedText = `${roomCard.beds} ${props.room.beds}`
-const peopleText = `${roomCard.people} ${props.room.people}`
-const sizeText = `${roomCard.size} ${props.room.size}`
+const bedSummary = `${roomCard.beds} ${props.room.beds}`
+const peopleSummary = `${roomCard.people} ${props.room.people}`
+const sizeSummary = `${roomCard.size} ${props.room.size}`
 </script>
 
 <template>
@@ -27,12 +27,9 @@ const sizeText = `${roomCard.size} ${props.room.size}`
         />
       </div>
       <div class="flex flex-col w-2/3 text-sm">
-        <p
-          class="mb-2 text-base font-display font-semibold"
-          v-text="room.name"
-        />
+        <p class="mb-2 text-base font-display font-bold" v-text="room.name" />
         <p class="flex-1" v-text="room.description" />
-        <p class="mb-6" v-text="sizeText" />
+        <p class="mb-6" v-text="sizeSummary" />
         <div class="flex items-baseline space-x-16">
           <div>
             <img
@@ -40,10 +37,10 @@ const sizeText = `${roomCard.size} ${props.room.size}`
               src="@/assets/img/double-bed.svg"
               :alt="roomCard.altBedIcon"
             />
-            <p v-text="bedText" />
+            <p v-text="bedSummary" />
           </div>
-          <p class="flex-1" v-text="peopleText" />
-          <p class="text-xl font-semibold" v-text="room.amount" />
+          <p class="flex-1" v-text="peopleSummary" />
+          <p class="text-xl font-bold" v-text="room.amount" />
         </div>
       </div>
     </div>

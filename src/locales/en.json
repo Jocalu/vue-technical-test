@@ -1,12 +1,10 @@
 {
-  "adultsText": "Adults",
   "altLogoText": "Los Cocos Bungalows logo",
   "breadcrumbsRooms": {
     "title": "Rooms & Rates",
     "description": "Plan your perfect stay at your hotel",
     "altText": "Rooms breadcrumbs"
   },
-  "childrenText": "Children",
   "headerDefault" : {
     "links": [
       "Home",
@@ -16,6 +14,12 @@
       "Membership",
       "Contact"
     ]
+  },
+  "heroMenu" : {
+    "selectAdults": "Select Adults",
+    "selectChildren": "Select Children",
+    "adults": "Adults",
+    "children": "Children"
   },
   "footerDefault": {
     "links": [
@@ -31,12 +35,24 @@
     "altSocialIconsText": "Social media icons"
   },
   "modifyText": "Modify",
+  "reservationSummary": {
+    "adults": "Adults",
+    "checkInText": "Check In",
+    "checkOutText": "Check Out",
+    "checkInHour": "From 15.00h",
+    "checkOutHour": "Before 12.00h",
+    "from": "From",
+    "people": "People",
+    "reservationDateText": "Reservation Date",
+    "title": "Reservation Summary",
+    "to": "To"
+  },
   "roomCard": {
     "altBedIcon": "Bed icon",
     "beds": "Beds:",
     "people": "People:",
     "size": "Size:"
   },
-  "selectAdults": "Select Adults",
-  "selectChildren": "Select Children"
+  "saveText": "Save",
+  "totalText": "Total"
 }
