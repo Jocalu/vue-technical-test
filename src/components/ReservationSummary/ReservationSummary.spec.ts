@@ -25,12 +25,20 @@ describe('ReservationSummary', () => {
     expect(title).toBeVisible()
   })
 
-  test('should render default values for title and number of adults', () => {
-    const { getAllByText } = componentBuilder()
+  test('should render default value for title', () => {
+    const { getByText } = componentBuilder()
 
-    const defaultValues = getAllByText('-')
+    const defaultTitle = getByText('-')
 
-    expect(defaultValues).toHaveLength(2)
+    expect(defaultTitle).toBeVisible()
+  })
+
+  test('should render default value for number of adults', () => {
+    const { getByText } = componentBuilder()
+
+    const defaultTotal = getByText('0€')
+
+    expect(defaultTotal).toBeVisible()
   })
 
   test('should render default reservartion date', () => {

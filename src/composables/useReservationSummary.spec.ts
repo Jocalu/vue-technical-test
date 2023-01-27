@@ -7,7 +7,7 @@ const { reservationSummaryData, updateHotelData, updateReservationData } =
   useReservationSummary()
 
 const mockedHotelData: Room = {
-  amount: '500 €',
+  amount: 500,
   beds: '2',
   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
   img: '',
@@ -29,17 +29,17 @@ describe('updateHotelData', () => {
     reservationSummaryData.checkinDate = '-'
     reservationSummaryData.checkoutDate = '-'
     reservationSummaryData.roomName = '-'
-    reservationSummaryData.total = '-'
+    reservationSummaryData.total = 0
   })
 
-  test('should updates reservationSummaryData with the correct data', () => {
+  test('should updates hotelData with the correct data', () => {
     const expectedReservationSummaryData = {
       adults: '-',
       checkinDate: '-',
       checkoutDate: '-',
       children: '-',
       roomName: mockedHotelData.name,
-      total: mockedHotelData.amount
+      total: 500
     }
 
     updateHotelData(mockedHotelData)
@@ -68,7 +68,7 @@ describe('updateReservationData', () => {
     reservationSummaryData.checkinDate = '-'
     reservationSummaryData.checkoutDate = '-'
     reservationSummaryData.roomName = '-'
-    reservationSummaryData.total = '-'
+    reservationSummaryData.total = 0
   })
 
   test('should updates reservationSummaryData with the correct data', () => {
@@ -78,7 +78,7 @@ describe('updateReservationData', () => {
       checkoutDate: mockedReservationData.endDate,
       children: mockedReservationData.children,
       roomName: '-',
-      total: '-'
+      total: 0
     }
 
     updateReservationData(mockedReservationData)

@@ -5,7 +5,7 @@ import RoomCard from './RoomCard.vue'
 import { roomCard } from '@/locales/en.json'
 
 const mockedRoom = {
-  amount: '100€',
+  amount: 100,
   beds: '2',
   description: 'Room 1 description',
   img: 'room-1.jpg',
@@ -86,7 +86,7 @@ describe('RoomCard', () => {
   test('should render amount', () => {
     const { getByText } = componentBuilder()
 
-    const amount = getByText(mockedRoom.amount)
+    const amount = getByText(`${mockedRoom.amount}€`)
 
     expect(amount).toBeVisible()
   })

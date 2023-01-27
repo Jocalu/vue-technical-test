@@ -40,7 +40,7 @@ const sizeSummary = `${roomCard.size} ${props.room.size}`
             <p v-text="bedSummary" />
           </div>
           <p class="flex-1" v-text="peopleSummary" />
-          <p class="text-xl font-bold" v-text="room.amount" />
+          <p class="text-xl font-bold" v-text="`${room.amount}€`" />
         </div>
       </div>
     </div>

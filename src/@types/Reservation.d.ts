@@ -11,5 +11,5 @@ export interface ReservationSummaryData {
   checkoutDate: string
   children: string
   roomName: string
-  total: string
+  total: number
 }

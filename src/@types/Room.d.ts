@@ -1,5 +1,5 @@
 export interface Room {
-  amount: string
+  amount: number
   beds: string
   description: string
   img: string

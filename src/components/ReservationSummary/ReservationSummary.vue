@@ -33,10 +33,8 @@ const reservationDateSummary = computed(
 
 const totalDiscount = computed(
   () =>
-    `${
-      Number(reservationSummaryData.total) -
-      (Number(reservationSummaryData.total) * props.discountPercentage) / 100
-    }`
+    reservationSummaryData.total -
+    (reservationSummaryData.total * props.discountPercentage) / 100
 )
 </script>
 
@@ -68,8 +66,11 @@ const totalDiscount = computed(
     <hr class="mb-4 border-0 border-t border-gray-light" />
     <div class="flex justify-between mb-8">
       <p v-text="totalText" />
-      <p v-if="!hasDiscount" v-text="reservationSummaryData.total" />
-      <p v-else v-text="totalDiscount" />
+      <p v-if="!hasDiscount" v-text="`${reservationSummaryData.total}€`" />
+      <div v-else class="flex space-x-4">
+        <p v-text="`-${discountPercentage}%`" />
+        <p v-text="`${totalDiscount}€`" />
+      </div>
     </div>
     <button class="button" @click="saveHandler" v-text="saveText" />
   </div>
